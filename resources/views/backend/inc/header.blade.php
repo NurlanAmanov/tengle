@@ -22,7 +22,7 @@
         <a class="nav-link {{ request()->routeIs('admin.project.*') ? 'active bg-gradient-dark text-white' : 'text-dark' }}"
            >
             <i class="material-symbols-rounded opacity-5">table_view</i>
-            <span class="nav-link-text ms-1">Layihələr</span>
+            <span class="nav-link-text ms-1">Projects</span>
         </a>
     </li>
 
@@ -30,15 +30,15 @@
         <a class="nav-link {{ request()->routeIs('admin.news.*') ? 'active bg-gradient-dark text-white' : 'text-dark' }}"
           >
             <i class="material-symbols-rounded opacity-5">table_view</i>
-            <span class="nav-link-text ms-1">Xəbərlər</span>
+            <span class="nav-link-text ms-1">Sliders</span>
         </a>
     </li>
 
     <li class="nav-item">
         <a class="nav-link {{ request()->routeIs('admin.service.*') ? 'active bg-gradient-dark text-white' : 'text-dark' }}"
-          >
+          href="{{ route('servicelist') }}" >
             <i class="material-symbols-rounded opacity-5">table_view</i>
-            <span class="nav-link-text ms-1">Xidmətlər</span>
+            <span class="nav-link-text ms-1">Services</span>
         </a>
     </li>
 
@@ -46,24 +46,7 @@
         <a class="nav-link {{ request()->routeIs('admin.about.*') ? 'active bg-gradient-dark text-white' : 'text-dark' }}"
           >
             <i class="material-symbols-rounded opacity-5">info</i>
-            <span class="nav-link-text ms-1">Haqqımızda</span>
-        </a>
-    </li>
-
-    <li class="nav-item">
-        <a class="nav-link {{ request()->routeIs('admin.slider.*') ? 'active bg-gradient-dark text-white' : 'text-dark' }}"
-          >
-            <i class="material-symbols-rounded opacity-5">slideshow</i>
-            <span class="nav-link-text ms-1">Slider</span>
-        </a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link {{ request()->routeIs('admin.partners.*') ? 'active bg-gradient-dark text-white' : 'text-dark' }}"
-        >
-           
-<i class="material-symbols-rounded">handshake</i>
-
-            <span class="nav-link-text ms-1">Partnyorlar</span>
+            <span class="nav-link-text ms-1">About Us</span>
         </a>
     </li>
 {{-- 

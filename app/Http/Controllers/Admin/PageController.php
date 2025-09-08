@@ -10,4 +10,7 @@ class PageController extends Controller
     function  index() {
         return view('backend.pages.dashboard');
     }
+    function servicelist() {
+        return view('backend.pages.servicelist');
+    }
 }

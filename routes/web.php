@@ -10,3 +10,4 @@ Route::get('/services',[Pagecontroller::class,'service'])->name('services');
 Route::get('/project',[Pagecontroller::class,'project'])->name('project');
 Route::get('/contact',[Pagecontroller::class,'contact'])->name('contact');
 Route::get('/admin',[AdminPageController::class,'index'])->name('index');
+Route::get('/servicelist',[AdminPageController::class,'servicelist'])->name('servicelist');
