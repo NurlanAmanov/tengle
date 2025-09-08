@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tenglee Marine & Engineering</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Inter Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #333;
+            background-color: #f4f7f9;
+        }
+        .container {
+            max-width: 1200px;
+        }
+        .section-heading {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #0F2E4A;
+            margin-bottom: 1rem;
+        }
+        .card {
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <!-- Navbar -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <a href="index.html" class="flex items-center space-x-2">
+                <img src="https://i.ibb.co/gbnMv56S/1.png" alt="Tenglee Marine & Engineering Logo" class="h-10 sm:h-12">
+            </a>
+            <div class="hidden md:flex space-x-6 lg:space-x-12 font-medium">
+                <a href="#about" class="text-gray-600 hover:text-blue-700 transition-colors">About Us</a>
+                <a href="#services" class="text-gray-600 hover:text-blue-700 transition-colors">Services</a>
+                <a href="#" class="text-blue-700 font-bold">Projects</a>
+                <a href="#" class="text-gray-600 hover:text-blue-700 transition-colors">Contact</a>
+            </div>
+            <!-- Mobile Menu Button -->
+            <button class="md:hidden p-2 text-gray-600 hover:text-blue-700 focus:outline-none">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="section-heading text-center mb-2">Our Key Projects</h2>
+            <p class="text-lg text-gray-500 text-center mb-12">Explore our portfolio of significant achievements and groundbreaking projects in the fields of marine engineering and offshore construction.</p>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            
+                <!-- NEW PROJECT: Anchor Handling Vessel -->
+                <div class="card overflow-hidden">
+                    <img src="https://i.ibb.co/yc9q17wt/image.png" alt="Maersk Shipper Image" border="0" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">ANCHOR HANDLING VESSEL</h3>
+                        <div class="text-gray-600 text-sm space-y-1">
+                            <div><span class="font-semibold">Vessel Name:</span> MAERSK SHIPPER</div>
+                            <div><span class="font-semibold">Company:</span> MAERSK SUPPLY SERVICES - COPENHAGEN, DENMARK</div>
+                            <div><span class="font-semibold">Date of Completion:</span> 1999</div>
+                            <div><span class="font-semibold">Dimensions:</span> 82.00M Length | 19.00M Beam</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- NEW PROJECT: Icebreaker -->
+                <div class="card overflow-hidden">
+                    <img src="https://i.ibb.co/0pKB1TNr/image.png" alt="Varandey Icebreaker Image" border="0" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">ICEBREAKER</h3>
+                        <div class="text-gray-600 text-sm space-y-1">
+                            <div><span class="font-semibold">Vessel Name:</span> VARANDEY TERMINAL MULTIPURPOSE ICEBREAKER</div>
+                            <div><span class="font-semibold">Company:</span> LUKOIL - TRANS CO LTD</div>
+                            <div><span class="font-semibold">Date of Completion:</span> 2006</div>
+                            <div><span class="font-semibold">Dimensions:</span> 100.00M Length | 21.70M Beam | 11.00M Depth</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- NEW PROJECT: 28000 Tonnes DWT FSO Unit -->
+                <div class="card overflow-hidden">
+                    <img src="https://i.ibb.co/9HKRZXKB/image.png" alt="Yuri Korchagin FSO Image" border="0" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">28000 TONNES DWT FSO UNIT</h3>
+                        <div class="text-gray-600 text-sm space-y-1">
+                            <div><span class="font-semibold">Vessel Name:</span> YURI KORCHAGIN FIELD, CASPIAN SEA, RUSSIA</div>
+                            <div><span class="font-semibold">Company:</span> LUKOIL - NIZHNEVOLZHSKNEFT</div>
+                            <div><span class="font-semibold">Date of Completion:</span> 2007</div>
+                            <div><span class="font-semibold">Dimensions:</span> 132.80M Length | 32.00M Beam | 15.70M Depth</div>
+                        </div>
+                    </div>
+                </div>
+            
+                <!-- Project: GLOBAL 1201 DEEPWATER DERRICK PIPELAY VESSEL -->
+                <div class="card overflow-hidden">
+                    <img src="https://i.ibb.co/qYJbVr5t/35.jpg" alt="35" border="0" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">GLOBAL 1201 DEEPWATER DERRICK PIPELAY VESSEL</h3>
+                        <div class="text-gray-600 text-sm space-y-1">
+                            <div><span class="font-semibold">Vessel Name:</span> GLOBAL 1201</div>
+                            <div><span class="font-semibold">Owner:</span> Global Offshore & Marine Pte Ltd</div>
+                            <div><span class="font-semibold">Date of Completion:</span> 2010</div>
+                            <div><span class="font-semibold">Dimensions:</span> 162.30m Length | 37.80m Beam | 16.10m Depth</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project: "28 MAY" - FLOATING DOCK -->
+                <div class="card overflow-hidden">
+                    <img src="https://i.ibb.co/84tjkYD1/image.png" alt="image" border="0" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">"28 MAY" - FLOATING DOCK</h3>
+                        <div class="text-gray-600 text-sm space-y-1">
+                            <div><span class="font-semibold">Owner:</span> SOCAR</div>
+                            <div><span class="font-semibold">Vessel Name:</span> 28 MAY</div>
+                            <div><span class="font-semibold">Date of Completion:</span> 2012</div>
+                            <div><span class="font-semibold">Dimensions:</span> 168.30m Length | 50.00m Breadth</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project: ROCK - DUMPING FALL PIPE VESSEL -->
+                <div class="card overflow-hidden">
+                    <img src="https://i.ibb.co/rfxNBv0q/image.png" alt="image" border="0" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">ROCK - DUMPING FALL PIPE VESSEL</h3>
+                        <div class="text-gray-600 text-sm space-y-1">
+                            <div><span class="font-semibold">Vessel Name:</span> ROCKPIPER</div>
+                            <div><span class="font-semibold">Owner:</span> Royal Boskalis</div>
+                            <div><span class="font-semibold">Date of Completion:</span> 2012</div>
+                            <div><span class="font-semibold">Dimensions:</span> 159.80m Length | 36.00m Beam | 13.50m Depth</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project: "SOCAR - 1" - TUGBOAT -->
+                <div class="card overflow-hidden">
+                    <img src="https://i.ibb.co/HDJXLT2R/image.png" alt="image" border="0" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">"SOCAR - 1" - TUGBOAT</h3>
+                        <div class="text-gray-600 text-sm space-y-1">
+                            <div><span class="font-semibold">Vessel Name:</span> SOCAR-1</div>
+                            <div><span class="font-semibold">Owner:</span> ASCO</div>
+                            <div><span class="font-semibold">Date of Completion:</span> 2012</div>
+                            <div><span class="font-semibold">Dimensions:</span> 30.00m Length | 10.50m Beam | 4.90m Depth</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project: FLOATING DOCK -->
+                <div class="card overflow-hidden">
+                    <img src="https://i.ibb.co/rKv4RPfJ/image.png" alt="image" border="0" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">FLOATING DOCK</h3>
+                        <div class="text-gray-600 text-sm space-y-1">
+                            <div><span class="font-semibold">Vessel Name:</span> PRM HEAVY LIFT</div>
+                            <div><span class="font-semibold">Owner:</span> PRM Offshore Heavy Industries Pte Ltd</div>
+                            <div><span class="font-semibold">Date of Completion:</span> 2012</div>
+                            <div><span class="font-semibold">Dimensions:</span> 144.00m Length | 48.00m Beam | 3.50m Depth</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project: JACK-UP RIG -->
+                <div class="card overflow-hidden">
+                    <img src="https://i.ibb.co/Zpc6cH20/image.png" alt="image" border="0" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">JACK - UP RIG</h3>
+                        <div class="text-gray-600 text-sm space-y-1">
+                            <div><span class="font-semibold">Vessel Name:</span> PRIMUS</div>
+                            <div><span class="font-semibold">Owner:</span> Oro Negro</div>
+                            <div><span class="font-semibold">Date of Completion:</span> 2012</div>
+                            <div><span class="font-semibold">Legs:</span> 234 x 208 x 25</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- NEW PROJECT: SBM Installer -->
+                <div class="card overflow-hidden">
+                    <img src="https://i.ibb.co/dsGf7RKW/image.png" alt="image" border="0" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">MOBILE OFFSHORE DRILLING UNIT</h3>
+                        <div class="text-gray-600 text-sm space-y-1">
+                            <div><span class="font-semibold">Vessel Name:</span> SBM Installer</div>
+                            <div><span class="font-semibold">Owner:</span> SBM Offshore</div>
+                            <div><span class="font-semibold">Date of Completion:</span> 2012</div>
+                            <div><span class="font-semibold">Dimensions:</span> 111.20m Length | 25.00m Beam | 10.20m Depth</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- NEW PROJECT: FLY Challenger -->
+                <div class="card overflow-hidden">
+                    <img src="https://i.ibb.co/prnXFHZM/image.png" alt="image" border="0" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">BULK CARRIER</h3>
+                        <div class="text-gray-600 text-sm space-y-1">
+                            <div><span class="font-semibold">Vessel Name:</span> FLY Challenger</div>
+                            <div><span class="font-semibold">Owner:</span> OK Tedi Mining</div>
+                            <div><span class="font-semibold">Date of Completion:</span> SEP 2013</div>
+                            <div><span class="font-semibold">Dimensions:</span> 90.30m Length | 23.00m Breadth</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- NEW PROJECT: FLY Prosperity -->
+                <div class="card overflow-hidden">
+                    <img src="https://i.ibb.co/5WkPbYDh/image.png" alt="image" border="0" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">BULK CARRIER</h3>
+                        <div class="text-gray-600 text-sm space-y-1">
+                            <div><span class="font-semibold">Vessel Name:</span> FLY Prosperity</div>
+                            <div><span class="font-semibold">Owner:</span> OK Tedi Mining</div>
+                            <div><span class="font-semibold">Date of Completion:</span> SEP 2013</div>
+                            <div><span class="font-semibold">Dimensions:</span> 90.35m Length | 23.00m Beam | 5.30m Depth</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- NEW PROJECT: DLV 2000 -->
+                <div class="card overflow-hidden">
+                    <img src="https://i.ibb.co/fGK1XzQb/image.png" alt="image" border="0" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">186M PIPELAY VESSEL</h3>
+                        <div class="text-gray-600 text-sm space-y-1">
+                            <div><span class="font-semibold">Vessel Name:</span> DLV 2000</div>
+                            <div><span class="font-semibold">Owner:</span> McDermott International, Inc.</div>
+                            <div><span class="font-semibold">Date of Completion:</span> 2015</div>
+                            <div><span class="font-semibold">Dimensions:</span> 186.00m Length | 38.40m Beam | 17.40m Depth</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- NEW PROJECT: Crew Boats -->
+                <div class="card overflow-hidden">
+                    <img src="https://i.ibb.co/pjCp1V9T/image.png" alt="image" border="0" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">"UFUQ", "ZAFAR" AND "TURAN" CREW BOATS</h3>
+                        <div class="text-gray-600 text-sm space-y-1">
+                            <div><span class="font-semibold">Vessel Name:</span> "UFUQ", "ZAFAR" AND "TURAN"</div>
+                            <div><span class="font-semibold">Owner:</span> ASCO</div>
+                            <div><span class="font-semibold">Date of Completion:</span> 2016</div>
+                            <div><span class="font-semibold">Dimensions:</span> 38.22m Length | 8.20m Beam | 4.18m Depth</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- NEW PROJECT: Heydar Aliyev Semisubmersible Drilling Rig -->
+                <div class="card overflow-hidden">
+                    <img src="https://i.ibb.co/vCc5bxzH/image.png" alt="image" border="0" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">"HEYDAR ALIYEV" SEMISUBMERSIBLE DRILLING RIG</h3>
+                        <div class="text-gray-600 text-sm space-y-1">
+                            <div><span class="font-semibold">Vessel Name:</span> "HEYDAR ALIYEV"</div>
+                            <div><span class="font-semibold">Owner:</span> SOCAR</div>
+                            <div><span class="font-semibold">Date of Completion:</span> 2017</div>
+                            <div><span class="font-semibold">Dimensions:</span> 69.50m x 69.50m | 35.50m Depth of Maindeck</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- NEW PROJECT: MPV Everest Ice Class Vessel -->
+                <div class="card overflow-hidden">
+                    <img src="https://i.ibb.co/VWRqttcp/image.png" alt="image" border="0" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">ICE CLASS MULTIPURPOSE VESSEL DIVING SUPPORT</h3>
+                        <div class="text-gray-600 text-sm space-y-1">
+                            <div><span class="font-semibold">Vessel Name:</span> MPV EVEREST</div>
+                            <div><span class="font-semibold">Owner:</span> NEW ORIENT MARINE PTE. LTD.</div>
+                            <div><span class="font-semibold">Date of Completion:</span> OCT 2017</div>
+                            <div><span class="font-semibold">Dimensions:</span> 145.00m Length | 30.00m Beam | 13.00m Depth</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- NEW PROJECT: Global 1200 Pipelay Vessel -->
+                <div class="card overflow-hidden">
+                    <img src="https://i.ibb.co/997XyC62/image.png" alt="image" border="0" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">GLOBAL 1200 DEEPWATER DERRICK PIPELAY VESSEL</h3>
+                        <div class="text-gray-600 text-sm space-y-1">
+                            <div><span class="font-semibold">Vessel Name:</span> GLOBAL 1200</div>
+                            <div><span class="font-semibold">Owner:</span> GLOBAL OFFSHORE & MARINE PTE LTD</div>
+                            <div><span class="font-semibold">Date of Completion:</span> NOV 2017</div>
+                            <div><span class="font-semibold">Dimensions:</span> 162.30m Length | 37.80m Beam | 16.10m Depth</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- NEW PROJECT: KST Liberty Tug -->
+                <div class="card overflow-hidden">
+                    <img src="https://i.ibb.co/nsCPKVgN/image.png" alt="image" border="0" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">65 T BP DUAL FUELED ASD TUG</h3>
+                        <div class="text-gray-600 text-sm space-y-1">
+                            <div><span class="font-semibold">Vessel Name:</span> KST LIBERTY</div>
+                            <div><span class="font-semibold">Owner:</span> KEPPEL SMIT TOWAGE PTE LTD</div>
+                            <div><span class="font-semibold">Date of Completion:</span> NOV 2017</div>
+                            <div><span class="font-semibold">Dimensions:</span> 32.00m Length | 12.48m Beam | 5.30m Depth</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- NEW PROJECT: Khankendi Subsea Construction Vessel -->
+                <div class="card overflow-hidden">
+                    <img src="https://i.ibb.co/8gp16snq/image.png" alt="image" border="0" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">SUBSEA CONSTRUCTION VESSEL</h3>
+                        <div class="text-gray-600 text-sm space-y-1">
+                            <div><span class="font-semibold">Vessel Name:</span> KHANKENDI</div>
+                            <div><span class="font-semibold">Owner:</span> SHAH DENIZ CONSORTIUM</div>
+                            <div><span class="font-semibold">Date of Completion:</span> NOV 2017</div>
+                            <div><span class="font-semibold">Dimensions:</span> 155.00m Length | 32.00m Beam | 13.00m Depth</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- NEW PROJECT: Maju Loyalty Tug -->
+                <div class="card overflow-hidden">
+                    <img src="https://i.ibb.co/WpPCtpYj/image.png" alt="image" border="0" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">65 T BP LNG FUELED TUG</h3>
+                        <div class="text-gray-600 text-sm space-y-1">
+                            <div><span class="font-semibold">Vessel Name:</span> MAJU LOYALTY</div>
+                            <div><span class="font-semibold">Owner:</span> MAJU MARITIME</div>
+                            <div><span class="font-semibold">Date of Completion:</span> NOV 2017</div>
+                            <div><span class="font-semibold">Dimensions:</span> 32.00m Length | 12.48m Beam | 5.38m Depth</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- NEW PROJECT: Azerbaijan Ferry -->
+                <div class="card overflow-hidden">
+                    <!-- This image is a real one, uploaded by the user. -->
+                    <img src="https://i.ibb.co/GQDfWy2z/image.png" alt="image" border="0" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">AZERBAIJAN - CAR RAILWAY PASSENGER FERRY</h3>
+                        <div class="text-gray-600 text-sm space-y-1">
+                            <div><span class="font-semibold">Owner:</span> ASCO AZERBAIJAN</div>
+                            <div><span class="font-semibold">Date of Completion:</span> 2021</div>
+                            <div><span class="font-semibold">Dimensions:</span> 154.50M Length | 17.70M Beam | 7.50M Depth</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- NEW PROJECT: CHW04 OSS -->
+                <div class="card overflow-hidden">
+                    <img src="https://i.ibb.co/V03NzPy0/image.png" alt="image" border="0" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">CHW04 OFFSHORE SUBSTATION (OSS)</h3>
+                        <div class="text-gray-600 text-sm space-y-1">
+                            <div><span class="font-semibold">Project Name:</span> B386 1 UNIT OF OFFSHORE SUBSTATION</div>
+                            <div><span class="font-semibold">Owner:</span> ORSTED</div>
+                            <div><span class="font-semibold">Date of Completion:</span> 2024</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- NEW PROJECT: B385 -->
+                <div class="card overflow-hidden">
+                    <img src="https://i.ibb.co/LXcVnZxB/image.png" alt="image" border="0" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">WIND POWER STATION</h3>
+                        <div class="text-gray-600 text-sm space-y-1">
+                            <div><span class="font-semibold">Project Name:</span> B385 2 UNITS OF OFFSHORE SUBSTATIONS</div>
+                            <div><span class="font-semibold">Owner:</span> ORSTED</div>
+                            <div><span class="font-semibold">Date of Completion:</span> 2024</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#0C47A6] text-white py-16">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 border-b border-gray-400 pb-12 mb-8">
+                <div class="col-span-1">
+                    <div class="flex flex-col items-start mb-4">
+                        <a href="index.html" class="hover:opacity-75 transition-opacity duration-300">
+                            <img src="https://i.ibb.co/0yHqcvLB/tenglee-logo-2.png" alt="Tenglee Marine & Engineering Logo" class="w-full max-w-[200px]">
+                        </a>
+                        <p class="text-2xl sm:text-3xl font-bold mt-8">Leading the Way in Marine & Engineering</p>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 col-span-1 lg:col-span-2">
+                    <!-- Singapore Office Details -->
+                    <div>
+                        <h4 class="text-xl font-bold mb-4">SINGAPORE</h4>
+                        <address class="not-italic text-gray-400 space-y-2">
+                            <p><a href="mailto:ray.teng@tengleemarine.com" class="hover:underline">ray.teng@tengleemarine.com</a></p>
+                            <p>+65 9119 0377 / +65 6863 6280</p>
+                            <p>50 Tuas View Square,<br>Singapore 637726</p>
+                            <a href="https://share.google/kjkLVLJ4deZylHC1l" class="text-white hover:underline mt-4 inline-flex items-center space-x-2 font-semibold" target="_blank">
+                                <span>SEE ON MAP</span>
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                            </a>
+                        </address>
+                    </div>
+                    <!-- Baku Office Details -->
+                    <div>
+                        <h4 class="text-xl font-bold mb-4">BAKU</h4>
+                        <address class="not-italic text-gray-400 space-y-2">
+                            <p><a href="mailto:ray.teng@tengleemarine.com" class="hover:underline">ray.teng@tengleemarine.com</a></p>
+                            <p>+994 50 278 92 80 / +994 50 278 92 78</p>
+                            <p>15/2 Salyan Highway,<br>Baku, Azerbaijan</p>
+                            <a href="https://share.google/OghWgVVLtQm3Assbz" class="text-white hover:underline mt-4 inline-flex items-center space-x-2 font-semibold" target="_blank">
+                                <span>SEE ON MAP</span>
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                            </a>
+                        </address>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center text-gray-400 text-sm">
+                <p>&copy; 2025 Tenglee Marine & Engineering Pte Ltd. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
