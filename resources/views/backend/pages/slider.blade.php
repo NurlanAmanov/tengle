@@ -31,32 +31,56 @@
                   <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Actions</th>
                 </tr>
               </thead>
-              <tbody>
-                @forelse($sliders as $slider)
-                  <tr>
-                    <td class="text-sm">{{ $slider->id }}</td>
-                    <td>
-                      <img src="{{ asset('storage/' . $slider->image) }}" width="100" class="img-thumbnail" alt="Slider Image">
-                    </td>
-                    <td class="text-sm">{{ $slider->title }}</td>
-                    <td class="text-sm">{{ $slider->subtitle }}</td>
-                    <td class="text-center">
-                      <a  class="btn btn-sm btn-primary">Edit</a>
+<tbody>
+  @forelse($sliders as $slider)
+    <tr>
+      <td class="text-sm">{{ $slider->id }}</td>
+      <td>
+        <img src="{{ asset('storage/' . $slider->image) }}" width="100" class="img-thumbnail" alt="Slider Image">
+      </td>
+      <td class="text-sm">{{ $slider->title }}</td>
+      <td class="text-sm">{{ $slider->subtitle }}</td>
+      <td class="text-center">
+        <a href="{{ route('admin.sliders.edit', $slider->id) }}" class="btn btn-sm btn-primary">Edit</a>
 
-                      {{-- <form action="{{ route('admin.sliders.destroy', $slider->id) }}" method="POST" class="d-inline"
-                            onsubmit="return confirm('Are you sure you want to delete this slider?');">
-                        @csrf
-                        @method('DELETE')
-                        <button type="submit" class="btn btn-sm btn-danger">Delete</button>
-                      </form> --}}
-                    </td>
-                  </tr>
-                @empty
-                  <tr>
-                    <td colspan="5" class="text-center text-muted py-4">No sliders found.</td>
-                  </tr>
-                @endforelse
-              </tbody>
+        <!-- Delete button opens modal -->
+        <button type="button" class="btn btn-sm btn-danger" 
+                data-bs-toggle="modal" 
+                data-bs-target="#deleteModal{{ $slider->id }}">
+          Delete
+        </button>
+      </td>
+    </tr>
+
+    <!-- Delete Modal -->
+    <div class="modal fade" id="deleteModal{{ $slider->id }}" tabindex="-1" aria-labelledby="deleteModalLabel{{ $slider->id }}" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header bg-danger text-white">
+            <h5 class="modal-title" id="deleteModalLabel{{ $slider->id }}">Confirm Delete</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            Are you sure you want to delete <strong>{{ $slider->title }}</strong>?
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+            <form action="{{ route('admin.sliders.destroy', $slider->id) }}" method="POST" class="d-inline">
+              @csrf
+              @method('DELETE')
+              <button type="submit" class="btn btn-danger">Yes, Delete</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  @empty
+    <tr>
+      <td colspan="5" class="text-center text-muted py-4">No sliders found.</td>
+    </tr>
+  @endforelse
+</tbody>
+
             </table>
           </div>
         </div>

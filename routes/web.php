@@ -24,4 +24,7 @@ Route::prefix('admin')
         Route::get('/projectlist', [AdminPageController::class, 'projectlist'])->name('projects.index');
         Route::post('/sliders.store',[SliderController::class,'store'])->name('sliders.store');
         Route::get('/addSlider',[AdminPageController::class,'addSlider'])->name('addSlider');
+        Route::get('/sliders/{id}/edit', [SliderController::class, 'edit'])->name('sliders.edit'); // edit form
+        Route::put('/sliders/{id}', [SliderController::class, 'update'])->name('sliders.update');  // update
+        Route::delete('/sliders/{id}', [SliderController::class, 'destroy'])->name('sliders.destroy');
     });
