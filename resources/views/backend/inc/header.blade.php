@@ -49,8 +49,8 @@
 
         {{-- About Us --}}
         <li class="nav-item">
-          <a class="nav-link {{ request()->routeIs('admin.about.*') ? 'active bg-gradient-dark text-white' : 'text-dark' }}"
-             href="#">
+          <a class="nav-link {{ request()->routeIs('admin.aboutlist.*') ? 'active bg-gradient-dark text-white' : 'text-dark' }}"
+             href="{{route('admin.aboutlist')}}">
             <i class="material-symbols-rounded opacity-5">info</i>
             <span class="nav-link-text ms-1">About Us</span>
           </a>

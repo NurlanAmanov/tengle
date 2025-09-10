@@ -39,7 +39,10 @@
         <img src="{{ asset('storage/' . $slider->image) }}" width="100" class="img-thumbnail" alt="Slider Image">
       </td>
       <td class="text-sm">{{ $slider->title }}</td>
-      <td class="text-sm">{{ $slider->subtitle }}</td>
+  <td class="text-sm">
+    {{ \Illuminate\Support\Str::limit($slider->subtitle, 30, '...') }}
+</td>
+
       <td class="text-center">
         <a href="{{ route('admin.sliders.edit', $slider->id) }}" class="btn btn-sm btn-primary">Edit</a>
 

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Project;
 use App\Models\Slider;
 use Illuminate\Http\Request;
 
@@ -22,6 +23,18 @@ class PageController extends Controller
         return view('backend.pages.addSlider');
     }
     function projectlist() {
-        return view('backend.pages.project');
+        $projects = Project::all();
+
+        return view('backend.pages.project',compact('projects'));
+    }
+    function addproject() {
+        return view('backend.pages.addProject');
+    }
+
+    function aboutlist() {
+        return view('backend.pages.about');
+    }
+    function addservice() {
+        return view('backend.pages.addService');
     }
 }
