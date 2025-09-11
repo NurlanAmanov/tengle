@@ -48,4 +48,12 @@ Route::get('/about',[AdminPageController::class,'aboutlist'])->name('aboutlist')
 // Service
  Route::get('service/create', [AdminPageController::class, 'addservice'])->name('service.addservice');
   Route::post('services', [ServiceController::class, 'store'])->name('services.store');
+  Route::get('/services/{id}/edit', [ServiceController::class, 'editService'])->name('services.edit');
+Route::put('/services/{id}',      [ServiceController::class, 'updateService'])->name('services.update');
+Route::delete('/services/{id}',   [ServiceController::class, 'destroyService'])->name('services.destroy');
+
+// Process Steps (Our Process) – eyni ServiceController
+Route::get('/process-steps/{id}/edit', [ServiceController::class, 'editProcess'])->name('process_steps.edit');
+Route::put('/process-steps/{id}',      [ServiceController::class, 'updateProcess'])->name('process_steps.update');
+Route::delete('/process-steps/{id}',   [ServiceController::class, 'destroyProcess'])->name('process_steps.destroy');
 });

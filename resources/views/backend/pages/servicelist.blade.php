@@ -1,4 +1,8 @@
-   @extends('backend.layout.master')
+  @php
+  use Illuminate\Support\Facades\Storage;
+  use Illuminate\Support\Str;
+@endphp
+  @extends('backend.layout.master')
 
       @section('content')
     <div class="container-fluid py-2">
@@ -23,37 +27,125 @@
                       <th class="text-secondary opacity-7"></th>
                     </tr>
                   </thead>
-                  <tbody>
-                    <tr>
-                      <td>
-                        <div class="d-flex px-2 py-1">
-                          <div>
-                            <img src="../assets/img/team-2.jpg" class="avatar avatar-sm me-3 border-radius-lg" alt="user1">
-                          </div>
-                          <div class="d-flex flex-column justify-content-center">
-                            <h6 class="mb-0 text-sm">John Michael</h6>
-                            <p class="text-xs text-secondary mb-0">john@creative-tim.com</p>
-                          </div>
-                        </div>
-                      </td>
-                      <td>
-                        <p class="text-xs font-weight-bold mb-0">Manager</p>
-                        <p class="text-xs text-secondary mb-0">Organization</p>
-                      </td>
-                      <td class="align-middle text-center text-sm">
-                        <span class="badge badge-sm bg-gradient-success">Online</span>
-                      </td>
-                      <td class="align-middle text-center">
-                        <span class="text-secondary text-xs font-weight-bold">23/04/18</span>
-                      </td>
-                      <td class="align-middle">
-                        <a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
-                          Edit
-                        </a>
-                      </td>
-                    </tr>
+<tbody>
+  {{-- WHAT WE DO (services) --}}
+  @if(isset($service) && $service->count())
+    <tr class="table-light">
+      <td colspan="5"><strong>What We Do</strong></td>
+    </tr>
+    @foreach($service as $row)
+      @if(($row->section ?? 'what_we_do') === 'what_we_do')
+        <tr>
+          {{-- ID + badge --}}
+          <td class="align-middle">
+            <div class="d-flex flex-column">
+              <span class="text-sm mb-1">#{{ $row->id }}</span>
+              <span class="badge bg-gradient-info">What We Do</span>
+            </div>
+          </td>
 
-                  </tbody>
+          {{-- Image (icon fayl yolu) --}}
+          <td class="align-middle">
+            @php $img = $row->icon ? Storage::url($row->icon) : null; @endphp
+            @if($img)
+              <img src="{{ $img }}" class="avatar avatar-sm me-3 border-radius-lg" alt="{{ $row->title }}">
+            @else
+              <span class="text-secondary text-xs">No Image</span>
+            @endif
+          </td>
+
+          {{-- Content --}}
+          <td class="align-middle text-center text-sm">
+            <div class="d-flex flex-column">
+              <strong>{{ $row->title }}</strong>
+              <span class="text-xs text-secondary mt-1">
+                {{ Str::limit(strip_tags($row->description), 120) }}
+              </span>
+            </div>
+          </td>
+
+          {{-- Setting (yalnız tarix göstərək) --}}
+          <td class="align-middle text-center">
+            <span class="text-secondary text-xs">
+              {{ optional($row->created_at)->format('d.m.Y') }}
+            </span>
+          </td>
+
+          {{-- Actions (route adlarını öz layihənə uyğunlaşdır) --}}
+          <td class="align-middle">
+            <a href="{{ route('admin.services.edit', $row->id) }}" class="text-secondary font-weight-bold text-xs me-3">Edit</a>
+            <form action="{{ route('admin.services.destroy', $row->id) }}" method="POST" class="d-inline">
+              @csrf @method('DELETE')
+              <button type="submit" class="btn btn-link text-danger text-xs p-0 m-0">Delete</button>
+            </form>
+          </td>
+        </tr>
+      @endif
+    @endforeach
+  @endif
+
+  {{-- OUR PROCESS (process_steps) --}}
+  @if(isset($procses) && $procses->count())
+    <tr class="table-light">
+      <td colspan="5"><strong>Our Process: From Start to Finish</strong></td>
+    </tr>
+    @foreach($procses as $row)
+      <tr>
+        {{-- ID + badge --}}
+        <td class="align-middle">
+          <div class="d-flex flex-column">
+            <span class="text-sm mb-1">#{{ $row->id }}</span>
+            <span class="badge bg-gradient-secondary">Our Process</span>
+          </div>
+        </td>
+
+        {{-- Image (process image) --}}
+        <td class="align-middle">
+          @php $img = $row->image ? Storage::url($row->image) : null; @endphp
+          @if($img)
+            <img src="{{ $img }}" class="avatar avatar-sm me-3 border-radius-lg" alt="{{ $row->title }}">
+          @else
+            <span class="text-secondary text-xs">No Image</span>
+          @endif
+        </td>
+
+        {{-- Content --}}
+        <td class="align-middle text-center text-sm">
+          <div class="d-flex flex-column">
+            <strong>{{ $row->title }}</strong>
+            <span class="text-xs text-secondary mt-1">
+              {{ Str::limit(strip_tags($row->description), 120) }}
+            </span>
+          </div>
+        </td>
+
+        {{-- Setting (yalnız tarix) --}}
+        <td class="align-middle text-center">
+          <span class="text-secondary text-xs">
+            {{ optional($row->created_at)->format('d.m.Y') }}
+          </span>
+        </td>
+
+        {{-- Actions (route adlarını öz layihənə uyğunlaşdır) --}}
+        <td class="align-middle">
+          <a href="{{ route('admin.process_steps.edit', $row->id) }}" class="text-secondary font-weight-bold text-xs me-3">Edit</a>
+          <form action="{{ route('admin.process_steps.destroy', $row->id) }}" method="POST" class="d-inline">
+            @csrf @method('DELETE')
+            <button type="submit" class="btn btn-link text-danger text-xs p-0 m-0">Delete</button>
+          </form>
+        </td>
+      </tr>
+    @endforeach
+  @endif
+
+  {{-- Heç nə yoxdursa --}}
+  @if( (!isset($service) || !$service->count()) && (!isset($procses) || !$procses->count()) )
+    <tr>
+      <td colspan="5" class="text-center text-secondary py-4">Heç bir məlumat yoxdur.</td>
+    </tr>
+  @endif
+</tbody>
+
                 </table>
               </div>
             </div>

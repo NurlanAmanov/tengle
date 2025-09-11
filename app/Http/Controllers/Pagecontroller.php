@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\ProcessStep;
 use App\Models\Project;
+use App\Models\service;
 use App\Models\Slider;
 use Illuminate\Http\Request;
 
@@ -17,7 +19,9 @@ class Pagecontroller extends Controller
         return view('frontend.pages.about');
     }
     function service() {
-        return view('frontend.pages.services');
+           $procses = ProcessStep::all();
+        $service = service::all();
+        return view('frontend.pages.services',compact('procses','service'));
     }
     function project() {
         $project = Project::all();

@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\ProcessStep;
 use App\Models\Project;
+use App\Models\service;
 use App\Models\Slider;
 use Illuminate\Http\Request;
 
@@ -13,7 +15,9 @@ class PageController extends Controller
         return view('backend.pages.dashboard');
     }
     function servicelist() {
-        return view('backend.pages.servicelist');
+        $procses = ProcessStep::all();
+        $service = service::all();
+        return view('backend.pages.servicelist',compact('service','procses'));
     }
     function sliderlist() {
          $sliders = Slider::latest()->get();
