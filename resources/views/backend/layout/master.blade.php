@@ -17,6 +17,7 @@
   <link href="{{ asset('css/nucleo-svg.css') }}" rel="stylesheet" />
   <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded" />
+  <link href="https://cdn.quilljs.com/1.3.7/quill.snow.css" rel="stylesheet">
   <link id="pagestyle" href="{{ asset('css/material-dashboard.css?v=3.2.0') }}" rel="stylesheet" />
 </head>
 
@@ -47,8 +48,36 @@
   <script src="{{ asset('js/material-dashboard.min.js?v=3.2.0') }}"></script>
   
   <!-- CKEditor CDN -->
-  <script src="https://cdn.ckeditor.com/ckeditor5/40.0.0/classic/ckeditor.js"></script>
+  <script src="https://cdn.quilljs.com/1.3.7/quill.min.js"></script>
+    
 
+    <script>
+      // Quill-i init et
+      const quill = new Quill('#editor', {
+        theme: 'snow',
+        modules: {
+          toolbar: [
+            ['bold', 'italic', 'underline', 'strike'],
+            [{ 'header': [1, 2, 3, false] }],
+            [{ 'list': 'ordered' }, { 'list': 'bullet' }],
+            [{ 'align': [] }],
+            ['link', 'image'],
+            ['clean']
+          ]
+        }
+      });
+
+      // Əvvəlki old('content') varsa, editor-a yüklə
+      const oldContent = document.getElementById('content-input').value;
+      if (oldContent) {
+        quill.root.innerHTML = oldContent;
+      }
+
+      // Submit zamanı Quill HTML-ni gizli inputa yaz
+      document.getElementById('aboutus-form').addEventListener('submit', function () {
+        document.getElementById('content-input').value = quill.root.innerHTML;
+      });
+    </script>
   @stack('scripts')
 </body>
 

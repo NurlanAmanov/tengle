@@ -43,7 +43,7 @@
                         {{-- Upload New Image --}}
                         <div class="mb-3">
                             <label for="image" class="form-label">Change Image</label>
-                            <input type="file" name="image" id="image" class="form-control">
+                            <input type="file" name="image" id="image" class="form-control border">
                             <small class="text-muted">Leave empty if you don’t want to change the image.</small>
                         </div>
 
@@ -52,7 +52,7 @@
                             <label for="title" class="form-label">Title</label>
                             <input type="text" name="title" id="title" 
                                    value="{{ old('title', $slider->title) }}" 
-                                   class="form-control" required>
+                                   class="form-control border" required>
                         </div>
 
                         {{-- Subtitle --}}
@@ -60,7 +60,7 @@
                             <label for="subtitle" class="form-label">Subtitle</label>
                             <input type="text" name="subtitle" id="subtitle" 
                                    value="{{ old('subtitle', $slider->subtitle) }}" 
-                                   class="form-control">
+                                   class="form-control border">
                         </div>
 
                         {{-- Submit --}}

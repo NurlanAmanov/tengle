@@ -18,19 +18,19 @@
                         {{-- Image Upload --}}
                         <div class="mb-3">
                             <label for="image" class="form-label">Image</label>
-                            <input type="file" name="image" id="image" class="form-control" required>
+                            <input type="file" name="image" id="image" class="form-control border" required>
                         </div>
 
                         {{-- Title --}}
                         <div class="mb-3">
                             <label for="title" class="form-label">Title</label>
-                            <input type="text" name="title" id="title" class="form-control" placeholder="Enter title" required>
+                            <input type="text" name="title" id="title" class="form-control border" placeholder="Enter title" required>
                         </div>
 
                         {{-- Subtitle --}}
                         <div class="mb-3">
                             <label for="subtitle" class="form-label">Subtitle</label>
-                            <input type="text" name="subtitle" id="subtitle" class="form-control" placeholder="Enter subtitle">
+                            <input type="text" name="subtitle" id="subtitle" class="form-control border" placeholder="Enter subtitle">
                         </div>
 
                         {{-- Submit --}}

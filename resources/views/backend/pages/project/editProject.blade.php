@@ -24,27 +24,27 @@
 
                 <div class="mb-3">
                     <label class="form-label">Project Title</label>
-                    <input type="text" name="project_title" class="form-control" value="{{ old('project_title', $project->project_title) }}" required>
+                    <input type="text" name="project_title" class="form-control border" value="{{ old('project_title', $project->project_title) }}" required>
                 </div>
 
                 <div class="mb-3">
                     <label class="form-label">Vessel Name</label>
-                    <input type="text" name="vessel_name" class="form-control" value="{{ old('vessel_name', $project->vessel_name) }}">
+                    <input type="text" name="vessel_name" class="form-control border" value="{{ old('vessel_name', $project->vessel_name) }}">
                 </div>
 
                 <div class="mb-3">
                     <label class="form-label">Company / Owner</label>
-                    <input type="text" name="company_or_owner" class="form-control" value="{{ old('company_or_owner', $project->company_or_owner) }}">
+                    <input type="text" name="company_or_owner" class="form-control border" value="{{ old('company_or_owner', $project->company_or_owner) }}">
                 </div>
 
                 <div class="mb-3">
                     <label class="form-label">Completion Year</label>
-                    <input type="number" name="completion_year" class="form-control" value="{{ old('completion_year', $project->completion_year) }}">
+                    <input type="number" name="completion_year" class="form-control border" value="{{ old('completion_year', $project->completion_year) }}">
                 </div>
 
                 <div class="mb-3">
                     <label class="form-label">Dimensions</label>
-                    <input type="text" name="dimensions" class="form-control" value="{{ old('dimensions', $project->dimensions) }}">
+                    <input type="text" name="dimensions" class="form-control border" value="{{ old('dimensions', $project->dimensions) }}">
                 </div>
 
                 <div class="mb-3">
@@ -58,7 +58,7 @@
 
                 <div class="mb-3">
                     <label class="form-label">Change Image</label>
-                    <input type="file" name="image" class="form-control">
+                    <input type="file" name="image" class="form-control border">
                 </div>
 
                 <button type="submit" class="btn btn-primary">Update Project</button>

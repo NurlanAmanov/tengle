@@ -11,34 +11,46 @@ use Illuminate\Http\Request;
 
 class PageController extends Controller
 {
-    function  index() {
+    function  index()
+    {
         return view('backend.pages.dashboard');
     }
-    function servicelist() {
+    function servicelist()
+    {
         $procses = ProcessStep::all();
         $service = service::all();
-        return view('backend.pages.servicelist',compact('service','procses'));
+        return view('backend.pages.service.servicelist', compact('service', 'procses'));
     }
-    function sliderlist() {
-         $sliders = Slider::latest()->get();
-        return view('backend.pages.slider',compact('sliders'));
+    function sliderlist()
+    {
+        $sliders = Slider::latest()->get();
+        return view('backend.pages.slider.slider', compact('sliders'));
     }
-    function addSlider() {
-        return view('backend.pages.addSlider');
+    function addSlider()
+    {
+        return view('backend.pages.slider.addSlider');
     }
-    function projectlist() {
+    function projectlist()
+    {
         $projects = Project::all();
 
-        return view('backend.pages.project',compact('projects'));
+        return view('backend.pages.project.project', compact('projects'));
     }
-    function addproject() {
-        return view('backend.pages.addProject');
+    function addproject()
+    {
+        return view('backend.pages.project.addProject');
     }
 
-    function aboutlist() {
-        return view('backend.pages.about');
+    function aboutlist()
+    {
+        return view('backend.pages.about.about');
     }
-    function addservice() {
-        return view('backend.pages.addService');
+    function addAbout()
+    {
+        return view('backend.pages.about.addAbout');
+    }
+    function addservice()
+    {
+        return view('backend.pages.service.addService');
     }
 }

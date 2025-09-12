@@ -64,7 +64,7 @@ class ServiceController extends Controller
       public function editService($id)
     {
         $service = Service::findOrFail($id);
-        return view('backend.pages.service_edit', compact('service'));
+        return view('backend.pages.service.service_edit', compact('service'));
     }
 
     public function updateService(Request $request, $id)
