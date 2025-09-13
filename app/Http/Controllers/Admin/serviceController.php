@@ -59,7 +59,7 @@ class ServiceController extends Controller
             ]);
         }
 
-        return back()->with('success', 'Saved successfully!');
+       return redirect()->route('admin.services.index')->with('success', 'Saved successfully!');
     }
       public function editService($id)
     {

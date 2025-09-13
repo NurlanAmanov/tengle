@@ -21,6 +21,6 @@ class AboutController extends Controller
             'image' => $path,
             'content' => $request->content,
         ]);
-        return redirect()->route('admin.about.about')->with('success','About us added  successfully!');
+        return redirect()->route('backend.pages.about.about')->with('success','About us added  successfully!');
     }
 }

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\AboutController;
+use App\Http\Controllers\Admin\OurHistory;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\Admin\PageController as AdminPageController;
@@ -46,6 +47,10 @@ Route::prefix('admin')->as('admin.')->group(function () {
 
   Route::get('/about', [AdminPageController::class, 'aboutlist'])->name('aboutlist');
   Route::get('/about/creat', [AdminPageController::class, 'addAbout'])->name('about.add');
+  // Our History (About bölməsinin tarixçəsi)
+    Route::get('/about/history/create', [AdminPageController::class, 'addOurHistory'])->name('about.history.create');
+    Route::post('/about/history',       [OurHistory::class, 'store'])->name('about.history.store');
+
   Route::post('aboutus', [AboutController::class, 'store'])->name('aboutus.store');
   // Service
   Route::get('service/create', [AdminPageController::class, 'addservice'])->name('service.addservice');

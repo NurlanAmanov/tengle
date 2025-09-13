@@ -49,6 +49,10 @@ class PageController extends Controller
     {
         return view('backend.pages.about.addAbout');
     }
+    function addHistpage()
+    {
+        return view('backend.pages.about.addHistory');
+    }
     function addservice()
     {
         return view('backend.pages.service.addService');

@@ -48,13 +48,33 @@
         </li>
 
         {{-- About Us --}}
-        <li class="nav-item">
-          <a class="nav-link {{ request()->routeIs('admin.aboutlist.*') ? 'active bg-gradient-dark text-white' : 'text-dark' }}"
-             href="{{route('admin.aboutlist')}}">
-            <i class="material-symbols-rounded opacity-5">info</i>
-            <span class="nav-link-text ms-1">About Us</span>
-          </a>
-        </li>
+<li class="nav-item">
+  <a  class="nav-link {{ request()->routeIs('admin.about.*') ? 'active bg-gradient-dark text-white' : 'text-dark' }}"
+     href="#"
+     data-bs-toggle="collapse"
+     data-bs-target="#aboutMenu"
+     aria-expanded="false">
+    <span class="d-flex align-items-center">
+      <i class="material-symbols-rounded opacity-5 me-2">info</i>
+      <span class="nav-link-text">About Us</span>
+    </span>
+    <i class="fas fa-chevron-down small"></i>
+  </a>
+
+  <div id="aboutMenu" class="collapse">
+    <ul class="list-unstyled ps-4 mb-0 submenu">
+      <li><a class="dropdown-item" href="{{ route('admin.aboutlist') }}">About List</a></li>
+      <li><a class="dropdown-item" href="{{ route('admin.about.history.create') }}">Our History</a></li>
+      <li><a class="dropdown-item" href="#">History</a></li>
+      <li><hr class="dropdown-divider"></li>
+      <li><a class="dropdown-item" href="#">Mission & Vision</a></li>
+    </ul>
+  </div>
+</li>
+
+
+
+
 
         {{-- Logout (gələcəkdə auth aktiv olanda aç) --}}
         {{--
