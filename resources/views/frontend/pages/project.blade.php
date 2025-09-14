@@ -10,10 +10,10 @@
         </p>
 
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            @forelse($project as $project)
+            @forelse($projects as $project)
                 <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
                     @if($project->image_url)
-                        @if(Str::startsWith($project->image_url, ['http://','https://']))
+                        @if(\Illuminate\Support\Str::startsWith($project->image_url, ['http://','https://']))
                             <img src="{{ $project->image_url }}" alt="{{ $project->project_title }}" class="w-full h-48 object-cover">
                         @else
                             <img src="{{ asset('storage/'.$project->image_url) }}" alt="{{ $project->project_title }}" class="w-full h-48 object-cover">
@@ -38,10 +38,20 @@
             @endforelse
         </div>
 
-        <a href="{{ route('project') }}" 
-           class="px-6 py-3 border-2 border-[#0C47A6] text-[#0C47A6] rounded-full font-semibold hover:bg-[#0C47A6] hover:text-white transition-all duration-300 inline-block mt-8">
-           Show More
-        </a>
+        {{-- Show More yalnız limit < total olduqda çıxsın --}}
+        @if($limit < $total)
+            <div class="text-center mt-8">
+                <a href="{{ route('project', ['limit' => $nextLimit]) }}"
+                   class="px-6 py-3 border-2 border-[#0C47A6] text-[#0C47A6] rounded-full font-semibold hover:bg-[#0C47A6] hover:text-white transition-all duration-300">
+                   Show More
+                </a>
+            </div>
+            <p class="text-center text-sm text-gray-500 mt-3">
+                Showing <strong>{{ $limit }}</strong> of <strong>{{ $total }}</strong>
+            </p>
+        @else
+            <p class="text-center text-sm text-gray-500 mt-8">All {{ $total }} projects are shown.</p>
+        @endif
     </div>
 </section>
 @endsection

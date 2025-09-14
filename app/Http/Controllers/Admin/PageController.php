@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\AboutUs;
 use App\Models\HistoryOur;
+use App\Models\ourhistoryCountry;
 use App\Models\ProcessStep;
 use App\Models\Project;
 use App\Models\service;
@@ -66,4 +67,13 @@ class PageController extends Controller
     {
         return view('backend.pages.service.addService');
     }
+
+    function ourCountry() {
+        $countries = ourhistoryCountry::latest()->paginate(10);
+        return view('backend.pages.about.ourhistoryCountry',compact('countries'));
+    } 
+    public function addOurCountry()
+{
+    return view('backend.pages.about.addourhistoryCountry');
+}
 }

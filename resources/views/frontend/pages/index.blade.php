@@ -49,18 +49,13 @@
         <section id="about" class="py-16 bg-white">
             <div class="container mx-auto px-6">
                 <div class="grid md:grid-cols-2 gap-12 items-center">
+                    @forEach ($about as $ab) 
                     <div>
                         <h2 class="section-heading mb-6">About Us</h2>
                         <p class="text-lg text-gray-700 mb-6">
-                            Tenglee Marine & Engineering Pte Ltd. was established with a vision by Mr. Teng Soon Kiat and
-                            his four brothers to enter the marine industry and create a trusted brand name in quality
-                            shipbuilding.
+                         {!! $ab->content !!}
                         </p>
-                        <p class="text-lg text-gray-700 mb-6">
-                            Navigating the ups and downs of the marine industry, Tenglee has gained valuable experience and
-                            has evolved into a reputable brand name in the shipbuilding field. The company prides itself on
-                            delivering projects on time and with the highest quality.
-                        </p>
+                        
                         <a href="aboutus.html"
                             class="px-6 py-3 border-2 border-[#0C47A6] text-[#0C47A6] rounded-full font-semibold hover:bg-[#0C47A6] hover:text-white transition-all duration-300 inline-block">Learn
                             More</a>
@@ -70,6 +65,7 @@
                         <img src="https://i.ibb.co/35jVYTZR/tenglee-logo.jpg" alt="Tenglee logo"
                             class="w-full h-auto object-cover transform hover:scale-105 transition-all duration-300">
                     </div>
+                    @endforeach
                 </div>
             </div>
         </section>
@@ -79,24 +75,13 @@
             <div class="container mx-auto px-6 text-center">
                 <h2 class="section-heading mb-8">Why Choose Us?</h2>
                 <div class="grid md:grid-cols-3 gap-8">
-                    <div class="card bg-white p-8 rounded-xl shadow-md">
-                        <h3 class="text-2xl font-bold mb-2 text-gray-800">Quality and Reliability</h3>
+                   @foreach ($service as $ser ) 
+
+                   @endforeach
+                  <div class="card bg-white p-8 rounded-xl shadow-md">
+                        <h3 class="text-2xl font-bold mb-2 text-gray-800">{{$ser->title}}</h3>
                         <p class="text-gray-600">
-                            We are committed to the highest quality standards in every project, which helps us earn our
-                            clients' trust.
-                        </p>
-                    </div>
-                    <div class="card bg-white p-8 rounded-xl shadow-md">
-                        <h3 class="text-2xl font-bold mb-2 text-gray-800">Experienced Team</h3>
-                        <p class="text-gray-600">
-                            Our professional team of over 300 engineers and workers ensures projects are completed on time
-                            and without issues.
-                        </p>
-                    </div>
-                    <div class="card bg-white p-8 rounded-xl shadow-md">
-                        <h3 class="text-2xl font-bold mb-2 text-gray-800">Global Expertise</h3>
-                        <p class="text-gray-600">
-                            Our engineering knowledge allows us to serve projects all over the world.
+                            {!! $ser ->content !!}
                         </p>
                     </div>
                 </div>
@@ -108,32 +93,24 @@
             <div class="container mx-auto px-6 text-center">
                 <h2 class="section-heading mb-8">What We Do</h2>
                 <div class="grid md:grid-cols-3 gap-8">
-                    <div class="card p-8 rounded-xl shadow-md">
-                        <h3 class="text-2xl font-bold mb-4 text-gray-800">Shipbuilding</h3>
-                        <img src="https://i.ibb.co/Z6xpCnqh/Whats-App-Image-2025-06-11-at-17-12-54-1a576690.jpg"
-                            alt="Gəmi tikintisi" class="w-full h-64 object-cover rounded-xl shadow-lg mb-6">
+                    @foreach($procses as $proc)
+        <div class="card p-8 rounded-xl shadow-md">
+                        <h3 class="text-2xl font-bold mb-4 text-gray-800">{{$proc->title}}</h3>
+                    @if ($proc->image)
+                <img src="{{ asset('storage/' . $proc->image) }}"
+                     alt="{{ $proc->title }}"
+                     class="w-full h-64 object-cover">
+            @else
+                <img src="https://via.placeholder.com/600x400?text=No+Image"
+                     alt="No Image"
+                     class="w-full h-64 object-cover">
+            @endif
                         <p class="text-gray-600">
-                            We specialize in the construction of new ships, including the most modern CNC cutting systems.
+                           {!! $proc ->description !!}
                         </p>
                     </div>
-                    <div class="card p-8 rounded-xl shadow-md">
-                        <h3 class="text-2xl font-bold mb-4 text-gray-800">Marine Repair</h3>
-                        <img src="https://i.ibb.co/m5RRYgz3/ship.jpg" alt="Gəmi təmiri"
-                            class="w-full h-64 object-cover rounded-xl shadow-lg mb-6">
-                        <p class="text-gray-600">
-                            Our team of over 300 highly qualified engineers and workers handles the repair of marine and
-                            offshore vessels.
-                        </p>
-                    </div>
-                    <div class="card p-8 rounded-xl shadow-md">
-                        <h3 class="text-2xl font-bold mb-4 text-gray-800">Engineering Service</h3>
-                        <img src="https://i.ibb.co/fd7bgYpD/Whats-App-Image-2025-03-15-at-09-17-33-ede2d422.jpg"
-                            alt="Mühəndislik xidmətləri" class="w-full h-64 object-cover rounded-xl shadow-lg mb-6">
-                        <p class="text-gray-600">
-                            Our engineering knowledge encompasses steel hulls, piping, electrical, and mechanical work all
-                            over the world.
-                        </p>
-                    </div>
+                    @endforeach
+
                 </div>
                 <a href="services.html"
                     class="px-6 py-3 border-2 border-[#0C47A6] text-[#0C47A6] rounded-full font-semibold hover:bg-[#0C47A6] hover:text-white transition-all duration-300 inline-block mt-8">Learn

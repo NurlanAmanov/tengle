@@ -12,7 +12,7 @@
             <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
               <div class="bg-gradient-dark shadow-dark border-radius-lg pt-4 pb-3 d-flex justify-content-between align-items-center px-3">
                 <h6 class="text-white text-capitalize ps-3">Services</h6>
-                <a class="btn btn-sm btn-light" href="{{route('admin.service.addservice')}}">Add</a>
+                <a class="btn btn-sm btn-light" href="{{route('admin.services.create')}}">Add</a>
               </div>
             </div>
             <div class="card-body px-0 pb-2">
@@ -73,10 +73,10 @@
 
           {{-- Actions (route adlarını öz layihənə uyğunlaşdır) --}}
           <td class="align-middle">
-            <a href="{{ route('admin.services.edit', $row->id) }}" class="text-secondary font-weight-bold text-xs me-3">Edit</a>
+            <a href="{{ route('admin.services.edit', $row->id) }}" class="btn btn-sm btn-primary btn-xs">Edit</a>
             <form action="{{ route('admin.services.destroy', $row->id) }}" method="POST" class="d-inline">
               @csrf @method('DELETE')
-              <button type="submit" class="btn btn-link text-danger text-xs p-0 m-0">Delete</button>
+              <button type="submit" class="btn btn-sm btn-danger btn-xs">Delete</button>
             </form>
           </td>
         </tr>
@@ -128,10 +128,10 @@
 
         {{-- Actions (route adlarını öz layihənə uyğunlaşdır) --}}
         <td class="align-middle">
-          <a href="{{ route('admin.process_steps.edit', $row->id) }}" class="text-secondary font-weight-bold text-xs me-3">Edit</a>
+          <a href="{{ route('admin.process_steps.edit', $row->id) }}" class="btn btn-sm btn-primary btn-xs">Edit</a>
           <form action="{{ route('admin.process_steps.destroy', $row->id) }}" method="POST" class="d-inline">
             @csrf @method('DELETE')
-            <button type="submit" class="btn btn-link text-danger text-xs p-0 m-0">Delete</button>
+            <button type="submit" class="btn btn-sm btn-danger btn-xs">Delete</button>
           </form>
         </td>
       </tr>

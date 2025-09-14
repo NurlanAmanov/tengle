@@ -2,91 +2,47 @@
 
       @section('content')
           <!-- About Us & Founder Section -->
+        @foreach($about as $ab) 
           <section id="about-intro" class="container mx-auto mt-16 px-6 mb-16">
-              <h2 class="section-heading text-center mb-12">About Tenglee Marine & Engineering</h2>
+              <h2 class="section-heading text-center mb-12">{{$ab->title}}</h2>
               <div class="grid md:grid-cols-2 gap-12 items-center">
-                  <div>
-                      <!-- Resim boyutları yer tutucu boyutlarına (600x400) göre ayarlandı -->
-
-                      <img src="https://i.ibb.co/35jVYTZR/tenglee-logo.jpg" alt="Tenglee Logo"
-                          class="rounded-xl shadow-lg mb-6 w-[600px] h-[600px] object-cover">
-                  </div>
+             <div class="mb-6">
+    @if ($ab->image)
+        <img src="{{ asset('storage/' . $ab->image) }}" 
+             alt="{{ $ab->title }}" 
+            class="rounded-xl shadow-lg mb-6 w-[600px] h-[600px] object-cover"
+            >
+    @else
+        <img src="https://via.placeholder.com/600x400?text=No+Image" 
+             alt="No Image" 
+             class="rounded-xl shadow-lg mb-6 w-[600px] h-[600px] object-cover">
+    @endif
+</div>
                   <div>
                       <p class="text-lg text-gray-700 mb-6">
-                          Tenglee Marine & Engineering Pte Ltd. is envisioned by Mr. Teng Soon Kiat and his four brothers,
-                          who pursued their dream of joining the maritime industry to establish a trusted brand of quality
-                          shipbuilders. Beginning as a small company, the brothers built up the business and experienced the
-                          challenges of the marine industry first-hand.
-                          Working in compliance with the numerous regulations governing the industry, Tenglee also weathered
-                          the economic cycles of the marine sector, which typically last about 8 to 9 years, and has
-                          successfully sustained its operations to this day. Surviving the highs and lows of the maritime
-                          industry, Tenglee gained valuable experience and became a reliable brand in shipbuilding. The
-                          company prides itself on delivering projects on time with the utmost quality.
+                         {!! $ab->content !!}
                       </p>
-                      <p class="text-lg text-gray-700 mb-6 italic border-l-4 border-gray-400 pl-4">
-                          "We are proud of the fact that we deliver on time, thereby earning the complete trust of our
-                          shipowner clients, including the prestigious Keppel Shipyard."
-                      </p>
-                      <p class="text-lg font-bold text-gray-800">Mr. Teng Soon Kiat</p>
+                      
                   </div>
               </div>
           </section>
+        @endforeach
 
           <!-- Our History Section -->
           <section id="history" class="bg-white py-16">
               <div class="container mx-auto px-6">
                   <h2 class="section-heading text-center mb-12">Our History & Milestones</h2>
                   <div class="grid md:grid-cols-3 gap-8">
-                      <div class="card p-6">
-                          <h3 class="text-xl font-bold mb-2 text-blue-800">1996</h3>
+                      @forEach($our_story as $ours) 
+                   
+                        <div class="card p-6">
+                          <h3 class="text-xl font-bold mb-2 text-blue-800">{{$ours->year}}</h3>
                           <p class="text-gray-600">
-                              <b>Joined Seatrium (formerly known as Keppel) Officially awarded Resident Contractor
-                                  status.</b><br>
-                              &bull; Built and participated in numerous projects for many international clients such as BP,
-                              Transocean, McDermott, Saipem, SBM Offshore, etc.
+                              <b>{{$ours->title}}</b><br>
+                              {!! $ours->content !!}
                           </p>
                       </div>
-                      <div class="card p-6">
-                          <h3 class="text-xl font-bold mb-2 text-blue-800">2007</h3>
-                          <p class="text-gray-600">
-                              <b>Built a shipyard in Tuas, Singapore for PRM Offshore.</b><br>
-                              &bull; Invested in CNC technology, delivered over 5 fully equipped ship types.<br>
-                              &bull; Built Southeast Asia's first icebreaker for Lukoil.
-                          </p>
-                      </div>
-                      <div class="card p-6">
-                          <h3 class="text-xl font-bold mb-2 text-blue-800">2011</h3>
-                          <p class="text-gray-600"><b>Philippines and China Projects.</b></p>
-                      </div>
-                      <div class="card p-6">
-                          <h3 class="text-xl font-bold mb-2 text-blue-800">2012</h3>
-                          <p class="text-gray-600">
-                              <b>Set up a shipyard in Baku, Azerbaijan for SOCAR's oil exploration.</b><br>
-                              &bull; Facilities included a floating dock and 50 ton tug boat.
-                          </p>
-                      </div>
-                      <div class="card p-6">
-                          <h3 class="text-xl font-bold mb-2 text-blue-800">2013</h3>
-                          <p class="text-gray-600">
-                              <b>Completed Baku Shipyard.</b><br>
-                              &bull; Started work with BP on a semi-submersible and subsea construction vessel.
-                          </p>
-                      </div>
-                      <div class="card p-6">
-                          <h3 class="text-xl font-bold mb-2 text-blue-800">2015</h3>
-                          <p class="text-gray-600">
-                              <b>Finished BP Subsea Construction of High Vessel.</b><br>
-                              &bull; Built 20+ supply vessels, floating docks, jack-up rigs, icebreakers & more.<br>
-                              &bull; Trusted by BP, Saipem, McDermott and others for high-quality marine engineering.
-                          </p>
-                      </div>
-                      <div class="card p-6">
-                          <h3 class="text-xl font-bold mb-2 text-blue-800">TO DATE</h3>
-                          <p class="text-gray-600">
-                              <b>Development of the Middle Corridor in Caspian Region.</b><br>
-                              &bull; Building RoPax and Tankers to cross the Caspian Sea between Alat, Kurykh and Aktau.
-                          </p>
-                      </div>
+                      @endforeach
                   </div>
               </div>
           </section>
@@ -95,58 +51,30 @@
           <section id="singapore-section" class="container mx-auto px-6 py-16">
               <h2 class="section-heading text-center mb-12">Singapore</h2>
 
-              <!-- Our History Subsection -->
+           @foreach($oursContry as $cont)
+              
               <div class="grid md:grid-cols-2 gap-12 items-center mb-12">
                   <div>
-                      <h3 class="text-2xl font-bold text-gray-800 mb-4">Our History</h3>
+                      <h3 class="text-2xl font-bold text-gray-800 mb-4">{{$cont->title}}</h3>
                       <p class="text-lg text-gray-700">
-                          Tenglee started small during the shipbuilding boom in Singapore, led by many Japanese shipbuilding
-                          companies such as Mitsubishi and Hitachi. Through hands-on experience garnered over three
-                          generations in the industry, we became a trusted shipbuilder, expanding globally with key projects
-                          in Azerbaijan and China.
+                        {!! $cont->content !!}
                       </p>
                   </div>
                   <div>
                       <!-- Yeni şəkil yer tutucu ölçülərinə uyğun olaraq əlavə edildi -->
-                      <img src="https://i.ibb.co/LXtLC0Bq/12.jpg" alt="Tenglee's historical operations"
-                          class="rounded-xl shadow-lg w-[500px] h-[250px] object-cover">
+@if ($cont->image)
+                <img src="{{ asset('storage/' . $cont->image) }}" 
+                     alt="{{ $cont->title }}" 
+                     class="rounded-xl shadow-md mb-3 w-[400px] h-[300px] object-cover mx-auto">
+            @else
+                <img src="https://via.placeholder.com/400x300?text=No+Image" 
+                     alt="No Image" 
+                     class="rounded-xl shadow-md mb-3 w-[400px] h-[300px] object-cover mx-auto">
+            @endif
                   </div>
               </div>
+           @endforeach
 
-              <!-- What We Do Subsection -->
-              <div class="grid md:grid-cols-2 gap-12 items-center mb-12">
-                  <div>
-                      <h3 class="text-2xl font-bold text-gray-800 mb-4">What We Do</h3>
-                      <p class="text-lg text-gray-700">
-                          Our services cover the entire marine and offshore engineering spectrum, from steel structure
-                          fabrication to complex systems integration. We specialize in shipbuilding, marine repair, and
-                          providing comprehensive engineering solutions for vessels and offshore platforms. Our team of over
-                          300 skilled professionals ensures every project is delivered with precision and quality.
-                      </p>
-                  </div>
-                  <div>
-                      <!-- Bu şəkilin də ölçüsü yer tutucu ölçüsünə uyğunlaşdırıldı -->
-                      <img src="https://i.ibb.co/zHGGgMny/9.jpg" alt="Image of Tenglee's services"
-                          class="rounded-xl shadow-lg w-[500px] h-[250px] object-cover">
-                  </div>
-              </div>
-
-              <!-- Facilities Subsection -->
-              <div class="grid md:grid-cols-2 gap-12 items-center">
-                  <div>
-                      <h3 class="text-2xl font-bold text-gray-800 mb-4">Facilities</h3>
-                      <p class="text-lg text-gray-700">
-                          Our facilities in Tuas, Singapore, and Baku, Azerbaijan, are equipped with state-of-the-art
-                          technology, including CNC cutting systems, to handle complex projects. We have the capability to
-                          construct and repair a wide range of vessels and offshore structures.
-                      </p>
-                  </div>
-                  <div>
-                      <!-- Yeni şəkil yer tutucu ölçülərinə uyğun olaraq əlavə edildi -->
-                      <img src="https://i.ibb.co/jPTPyM1L/43.jpg" alt="Tenglee's facilities in Singapore"
-                          class="rounded-xl shadow-lg w-[500px] h-[250px] object-cover">
-                  </div>
-              </div>
           </section>
 
           <!-- Overseas Expansion & Mr. Ray Teng Section -->

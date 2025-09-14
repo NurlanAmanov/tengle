@@ -15,7 +15,7 @@
         <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
           <div class="bg-gradient-dark shadow-dark border-radius-lg pt-4 pb-3 d-flex justify-content-between align-items-center px-3">
             <h6 class="text-white text-capitalize mb-0">Sliders Table</h6>
-            <a href="{{route('admin.addSlider')}}"  class="btn btn-sm btn-light">Add Slider</a>
+            <a href="{{route('admin.sliders.create')}}"  class="btn btn-sm btn-light">Add Slider</a>
           </div>
         </div>
 

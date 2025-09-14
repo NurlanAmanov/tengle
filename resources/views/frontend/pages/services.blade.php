@@ -27,7 +27,7 @@
             @endif
           </div>
           <h3 class="text-2xl font-bold mb-4 text-gray-800">{{ $item->title }}</h3>
-          <p class="text-gray-600">{{ $item->description }}</p>
+          <p class="text-gray-600">{!! $item->description !!}</p>
         </div>
       @empty
         <div class="col-span-3 text-gray-500">Heç bir “What We Do” məlumatı yoxdur.</div>
@@ -57,7 +57,7 @@
             @endif
           </div>
           <h3 class="text-xl font-semibold mb-2 text-gray-800">{{ $step->title }}</h3>
-          <p class="text-gray-600">{{ $step->description }}</p>
+          <p class="text-gray-600">{!! $step->description !!}</p>
         </div>
       @empty
         <div class="col-span-3 text-gray-500">Heç bir “Our Process” məlumatı yoxdur.</div>

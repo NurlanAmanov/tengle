@@ -49,7 +49,7 @@ class ProjectController extends Controller
     public function edit($id)
     {
         $project = Project::findOrFail($id);
-        return view('backend.pages.editProject', compact('project'));
+        return view('backend.pages.project.editProject', compact('project'));
     }
 
     /**

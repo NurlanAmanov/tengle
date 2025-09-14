@@ -17,7 +17,7 @@
             <h5 class="mb-0">Add New About us</h5>
         </div>
         <div class="card-body">
-            <form id="aboutus-form" action="{{ route('admin.aboutus.store') }}" method="POST" enctype="multipart/form-data">
+            <form id="aboutus-form" action="{{ route('admin.about.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
 
                 <div class="mb-3">
