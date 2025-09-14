@@ -47,11 +47,14 @@ Route::prefix('admin')->as('admin.')->group(function () {
 
   Route::get('/about', [AdminPageController::class, 'aboutlist'])->name('aboutlist');
   Route::get('/about/creat', [AdminPageController::class, 'addAbout'])->name('about.add');
-  // Our History (About bölməsinin tarixçəsi)
-    Route::get('/about/history/create', [AdminPageController::class, 'addOurHistory'])->name('about.history.create');
-    Route::post('/about/history',       [OurHistory::class, 'store'])->name('about.history.store');
-
   Route::post('aboutus', [AboutController::class, 'store'])->name('aboutus.store');
+  // Our History (About bölməsinin tarixçəsi)
+    Route::get('/history', [AdminPageController::class, 'HistoryPage'])->name('historylist');
+  Route::get('/about/history/create', [AdminPageController::class, 'addHistpage'])
+    ->name('about.history.create');
+
+  Route::post('/about/history',       [OurHistory::class, 'store'])->name('about.history.store');
+
   // Service
   Route::get('service/create', [AdminPageController::class, 'addservice'])->name('service.addservice');
   Route::post('services', [ServiceController::class, 'store'])->name('services.store');

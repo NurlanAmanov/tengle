@@ -64,7 +64,7 @@
   <div id="aboutMenu" class="collapse">
     <ul class="list-unstyled ps-4 mb-0 submenu">
       <li><a class="dropdown-item" href="{{ route('admin.aboutlist') }}">About List</a></li>
-      <li><a class="dropdown-item" href="{{ route('admin.about.history.create') }}">Our History</a></li>
+      <li><a class="dropdown-item" href="{{ route('admin.historylist') }}">Our History</a></li>
       <li><a class="dropdown-item" href="#">History</a></li>
       <li><hr class="dropdown-divider"></li>
       <li><a class="dropdown-item" href="#">Mission & Vision</a></li>

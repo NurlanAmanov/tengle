@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\AboutUs;
+use App\Models\HistoryOur;
 use App\Models\ProcessStep;
 use App\Models\Project;
 use App\Models\service;
@@ -43,14 +45,21 @@ class PageController extends Controller
 
     function aboutlist()
     {
-        return view('backend.pages.about.about');
+        $about = AboutUs::all();
+        return view('backend.pages.about.about',compact('about'));
     }
     function addAbout()
     {
         return view('backend.pages.about.addAbout');
     }
+    function HistoryPage(){
+                $history = HistoryOur::all();
+        return view('backend.pages.about.History',compact('history'));
+    }
     function addHistpage()
     {
+      
+
         return view('backend.pages.about.addHistory');
     }
     function addservice()

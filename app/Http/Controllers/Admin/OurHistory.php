@@ -23,7 +23,7 @@ class OurHistory extends Controller
         ]);
 
         return redirect()
-            ->route('about.history.create')
+            ->route('admin.backend.about.aboutlist')
             ->with('success', 'History entry created successfully.');
     }
 }
